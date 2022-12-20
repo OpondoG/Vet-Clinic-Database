@@ -11,12 +11,6 @@ CREATE TABLE animals(
 
 );
 
--- CREATE TABLE owners(
-  ID INT GENERATED ALWAYS AS IDENTITY,
-   FULL_NAME VARCHAR(60),
-    AGE INT, PRIMARY KEY(ID));
-
-
 -- Day2
 
 ALTER TABLE animals ADD species varchar(255);
