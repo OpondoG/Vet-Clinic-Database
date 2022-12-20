@@ -1,14 +1,21 @@
 /* Database schema to keep the structure of entire database. */
 
 CREATE TABLE animals(
-  id integer PRIMARY KEY NOT NULL,
+  id INT GENERATED ALWAYS AS IDENTITY,
   name varchar(20),
   date_of_birth date NOT NULL,
   escape_attempts integer NOT NULL,
   neutered boolean NOT NULL,
-  weight_kg decimal NOT NULL
+  weight_kg decimal NOT NULL,
+  PRIMARY KEY(id)
 
 );
+
+-- CREATE TABLE owners(
+  ID INT GENERATED ALWAYS AS IDENTITY,
+   FULL_NAME VARCHAR(60),
+    AGE INT, PRIMARY KEY(ID));
+
 
 -- Day2
 
