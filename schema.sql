@@ -18,14 +18,16 @@ ALTER TABLE animals ADD species varchar(255);
 -- Day3
 
 CREATE TABLE owners(
-	id integer PRIMARY KEY NOT NULL,
+	id INT GENERATED ALWAYS AS IDENTITY,
 	full_name VARCHAR(100) NOT NULL,
-	age integer
+	age integer,
+  PRIMARY KEY(id)
 );
 
 CREATE TABLE species (
-    id integer PRIMARY KEY NOT NULL,
-    name varchar(400)
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name varchar(400),
+    PRIMARY KEY(id)
 );
 
 ALTER TABLE animals DROP COLUMN species;

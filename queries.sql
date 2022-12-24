@@ -55,8 +55,14 @@ WHERE date_of_birth BETWEEN '01-01-1990' AND '01-01-2000';
 -- Day3 
 
 
-SELECT animals.name, date_of_visit FROM visits JOIN animals ON animals.id = visits.animal_id JOIN vets ON visits.vet_id = vets.id WHERE vets.name = 'Maisy Smith' ORDER BY date_of_visit LIMIT 1;
-
+SELECT species.name, count(*)
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN species ON animals.species_id = species.id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE vet.name = 'Maisy Smith'
+  GROUP BY species.name
+  
 SELECT name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name='Melody Pond';
 
 SELECT * FROM animals JOIN species ON animals.species_id = species.id WHERE species.name='Pokemon';
